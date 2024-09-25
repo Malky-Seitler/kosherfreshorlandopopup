@@ -55,7 +55,7 @@ const HomePage = () => {
             }}
         >
             <Typography variant="h4" align="center" gutterBottom>
-                Kosher Fresh Orlando Sukkos 2024
+                Kosher Fresh Orlando Sukkos Popup 2024
             </Typography>
             <Grid container spacing={2}>
                 {products.map((product) => (
