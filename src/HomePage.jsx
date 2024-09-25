@@ -1,7 +1,7 @@
 import React from 'react';
 import { Box, Typography, Button, Grid, TextField } from '@mui/material';
 import { useOrderContext } from './OrderContext';
-
+import { useNavigate } from 'react-router-dom'
 const HomePage = () => {
     const { setOrderDetails, setTotalOrderCost } = useOrderContext();
 
@@ -30,13 +30,13 @@ const HomePage = () => {
             return total + product.price * orderQuantity[product.name];
         }, 0);
     };
-
+    const navigate = useNavigate();
     const handleSubmit = (e) => {
         e.preventDefault();
         const totalCost = calculateTotalCost();
         setOrderDetails({ orderQuantity });
         setTotalOrderCost(totalCost);
-        // Redirect to user info form here (e.g., using React Router)
+        navigate('/submit')
     };
 
     return (
